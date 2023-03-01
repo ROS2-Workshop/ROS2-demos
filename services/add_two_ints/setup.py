@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'service'
+package_name = 'add_two_ints'
 
 setup(
     name=package_name,
@@ -20,8 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'service = service.service:main',
-            'client = service.client:main'
+            'server = add_two_ints.server:main',
+            'client = add_two_ints.client:main'
         ],
     },
 )

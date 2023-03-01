@@ -1,10 +1,10 @@
 from setuptools import setup
 
-package_name = 'examples_rclpy_minimal_action_client'
+package_name = 'fibo_action'
 
 setup(
     name=package_name,
-    version='0.17.0',
+    version='0.20.3',
     packages=[package_name],
     data_files=[
         ('share/ament_index/resource_index/packages',
@@ -15,8 +15,8 @@ setup(
     zip_safe=True,
     author='Jacob Perron',
     author_email='jacob@openrobotics.org',
-    maintainer='Aditya Pande, Alejandro Hernandez Cordero',
-    maintainer_email='aditya.pande@openrobotics.org, alejandro@openrobotics.org',
+    maintainer='Audrow Nash, Michael Jeronimo',
+    maintainer_email='audrow@openrobotics.org, michael.jeronimo@openrobotics.org',
     keywords=['ROS'],
     classifiers=[
         'Intended Audience :: Developers',
@@ -24,15 +24,13 @@ setup(
         'Programming Language :: Python',
         'Topic :: Software Development',
     ],
-    description='Examples of action clients using rclpy.',
+    description='Python action tutorials code.',
     license='Apache License, Version 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'client = ' + package_name + '.client:main',
-            'client_cancel = ' + package_name + '.client_cancel:main',
-            'client_not_composable = ' + package_name + '.client_not_composable:main',
-            'client_asyncio = ' + package_name + '.client_asyncio:main',
+            'server = fibo_action.server:main',
+            'client = fibo_action.client:main',
         ],
     },
 )
