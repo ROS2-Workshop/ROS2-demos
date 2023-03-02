@@ -24,7 +24,6 @@ class Talker(Node):
         super().__init__("talker")
         self.declare_parameter('user_input', "World")
         self.declare_parameter('start_num', 0)
-        self.user_input = self.get_parameter("user_input").value
         self.start_num = self.get_parameter("start_num").value
 
         self.i = self.start_num
@@ -33,6 +32,7 @@ class Talker(Node):
         self.tmr = self.create_timer(timer_period, self.timer_callback)
 
     def timer_callback(self):
+        self.user_input = self.get_parameter("user_input").value
         self.get_logger().warn(f'Starting counter from "{self.start_num}" set from param file', once=True)
         msg = String()
         msg.data = f"Hello from {self.user_input}: {self.i}"
