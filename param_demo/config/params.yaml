@@ -1,0 +1,4 @@
+talker:
+  ros__parameters:
+    user_input: 'FabLab'
+    start_num: 100
