@@ -14,6 +14,7 @@
 # limitations under the License.
 
 from fibo_interfaces.action import Fibonacci
+import sys
 
 import rclpy
 from rclpy.action import ActionClient
@@ -66,7 +67,7 @@ def main(args=None):
 
     action_client = FibonacciActionClient()
 
-    action_client.send_goal(10)
+    action_client.send_goal(int(sys.argv[1]))
 
     rclpy.spin(action_client)
 
